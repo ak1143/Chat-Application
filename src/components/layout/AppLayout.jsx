@@ -21,7 +21,7 @@ const AppLayout = () => (WrapedComponent) => {
       <>
         <Title />
         <Header />
-        <Grid container height={"calc(100vh-4rem)"}>
+        <Grid container height="calc(100vh-4rem)">
           <Grid item xs={12} sm={4} md={3} height={"100%"}>
             <ChatList
               chats={SampleChats}
@@ -36,12 +36,11 @@ const AppLayout = () => (WrapedComponent) => {
             sx={{
               display: { xs: "none", sm: "block" },
             }}
-            height={"100%"}
+            height="100%"
           >
-            hi
+            <WrapedComponent {...props} />
           </Grid>
         </Grid>
-        <WrapedComponent {...props} />
       </>
     );
   };
