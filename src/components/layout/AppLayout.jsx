@@ -21,7 +21,7 @@ const AppLayout = () => (WrapedComponent) => {
       <>
         <Title />
         <Header />
-        <Grid container height="calc(100vh-4rem)">
+        <Grid container height="calc(100vh-4rem)" >
           <Grid item xs={12} sm={4} md={3} height={"100%"}>
             <ChatList
               chats={SampleChats}
