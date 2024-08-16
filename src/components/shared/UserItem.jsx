@@ -3,7 +3,7 @@ import React, { memo } from 'react'
 import ListItem from '@mui/material/ListItem';
 import { Add as AddIcon, Remove as RemoveIcon } from '@mui/icons-material';
 
-function UserItem({user,handler,handlerIsLoading, isAdded = false}) {
+function UserItem({user,handler,handlerIsLoading, isAdded = false, styling ={}}) {
 
     const {name,_id,avatar} = user;
 
@@ -14,6 +14,7 @@ function UserItem({user,handler,handlerIsLoading, isAdded = false}) {
                 alignItems={"center"}
                 spacing={"1rem"}
                 width={"100%"}
+                sx={{...styling}}
             >
                 <Avatar />
                 <Typography

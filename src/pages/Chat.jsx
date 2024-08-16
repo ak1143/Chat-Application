@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import AppLayout from '../components/layout/AppLayout'
 import { Box, IconButton, Stack } from '@mui/material';
-import { AttachFile as AttachFileIcon, EmojiEmotions as EmojiEmotionsIcon, Send as SendIcon} from '@mui/icons-material';
+import { AttachFile as AttachFileIcon, Send as SendIcon} from '@mui/icons-material';
 import { InputBox } from '../components/styles/StyledComponents';
 import { orange } from '../components/constants/color';
 import EmojiPicker from 'emoji-picker-react';

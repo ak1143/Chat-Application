@@ -21,7 +21,7 @@ function App() {
 
         <Route element={<ProtectiveRoute user={user} />}>
           <Route path='/' element={<Home/>} />
-          <Route path='/groups' element={<Groups/>} />
+          <Route path='/groups/' element={<Groups/>} />
           <Route path='/chat/:chatId' element={<Chat/>} />
         </Route>
 
