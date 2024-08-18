@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { backdropClasses, styled } from "@mui/material";
 import {Link as LinkComponent} from "react-router-dom";
 import { grayColor } from "../constants/color";
 
@@ -31,4 +31,29 @@ export const InputBox = styled("input")({
     padding:'0 3rem',
     borderRadius:'1.5rem',
     backgroundColor:`${grayColor}`
+});
+
+export const SearchField =styled("input")({
+    padding:"1rem 2rem",
+    width:"20vmax",
+    height:"2.5vmax",
+    border:"none",
+    outline:"none",
+    borderRadius:"1.5rem",
+    backgroundColor:"#f1f1f1",
+    fontSize:"1.1rem"
+});
+
+export const CurveButton = styled("button")({
+    borderRadius:"1.5rem",
+    padding:"0.5rem 1rem",
+    border:"none",
+    outline:"none",
+    cursor:"pointer",
+    backgroundColor:"black",
+    color:"white",
+    fontSize:"0.9rem",
+    ":hover":{
+        backgroundColor:"rgba(0,0,0,0.8)"
+    }
 })

@@ -205,7 +205,7 @@ const Groups = () => {
                 Members
               </Typography>
               <Stack
-                maxWidth={"45rem"}
+                maxWidth={"30rem"}
                 width={"100%"}
                 boxSizing={"border-box"}
                 padding={{
@@ -214,7 +214,6 @@ const Groups = () => {
                   md: "1rem 4rem",
                 }}
                 spacing={"2rem"}
-                bgcolor={"bisque"}
                 height={"50vh"}
                 overflow={"auto"}
               >
