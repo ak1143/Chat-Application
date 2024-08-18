@@ -4,6 +4,7 @@ import { Box, Button, Container, Paper, Stack, Typography } from '@mui/material'
 import { AdminPanelSettings as AdminPanelSettingsIcon, Group as GroupIcon, Message as MessageIcon, Notifications as NotificationsIcon, Person as PersonIcon} from '@mui/icons-material'
 import moment from 'moment'
 import { CurveButton, SearchField } from '../../components/styles/StyledComponents'
+import { DoughnutChart, LineChart } from '../../components/specific/Charts'
 
 function Dashboard() {
 
@@ -26,31 +27,32 @@ function Dashboard() {
 
   const Appbar =(
     <Paper
-        elevation={3}
-        sx={{ 
-            padding:{xs:"1rem", sm:"2rem"},
-            margin:{xs:"1.5rem 3rem", sm:"4rem 8rem" ,md:"4rem, 8rem"},
-            borderRadius:"1rem"
-        }}
+      elevation={3}
+      sx={{ padding: "2rem", margin: "2rem 0", borderRadius: "1rem" }}
     >
       <Stack direction={"row"} alignItems={"center"} spacing={"1rem"}>
-        <AdminPanelSettingsIcon  sx={{fontSize:"3rem"}}/>
-        <SearchField />
-        <CurveButton >search</CurveButton>
+        <AdminPanelSettingsIcon sx={{ fontSize: "3rem" }} />
+
+        <SearchField placeholder="Search..." />
+
+        <CurveButton>Search</CurveButton>
         <Box flexGrow={1} />
-        <Typography display={{
-          xs:"none",
-          lg:"block"
-        }}
-        color={"rgba(0,0,0,0.7)"}
-        textAlign={"center"}
+        <Typography
+          display={{
+            xs: "none",
+            lg: "block",
+          }}
+          color={"rgba(0,0,0,0.7)"}
+          textAlign={"center"}
         >
-          {moment().format("MMMM D YYYY")}
+          {moment().format("dddd, D MMMM YYYY")}
         </Typography>
+
         <NotificationsIcon />
       </Stack>
-
+        
     </Paper>
+    
   )
 
 
@@ -58,7 +60,19 @@ function Dashboard() {
     <AdminLayout>
         <Container component={"main"}>
           {Appbar}
-          <Stack direction={"row"} spacing={"1rem"} flexWrap={"wrap"}>
+          <Stack 
+            direction={{
+              xs:"column",
+              lg:"row"
+            }} 
+            flexWrap={"wrap"} 
+            justifyContent={"center"}
+            alignItems={{
+              xs:"center",
+              lg:"stretch"
+            }}
+            sx={{gap:"2rem"}}
+          >
               <Paper
                 elevation={3}
                 sx={{
@@ -66,28 +80,31 @@ function Dashboard() {
                   borderRadius:"1rem",
                   width:"100%",
                   maxWidth:"45rem",
-                  height:"25rem"
+                  flex:1
                 }}
               >
                 <Typography margin={"2rem 0"} variant='h5'>Last Messages</Typography>
-                {'chat'}
+                <LineChart value={[1,2,3,4]} />
               </Paper>
               <Paper
                 elevation={"3rem"}
                 sx={{
-                  padding:"1rem",
-                  borderRadius:"1rem",
-                  display:"flex",
-                  justifyContent:"center",
-                  alignItems:"center",
-                  width:{xs:"100%",sm:"50%"},
-                  position:"relative",
-                  width:"100%",
-                  maxWidth:"25rem",
-                  height:"25rem"
+                  padding: "1rem ",
+                  borderRadius: "1rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: { xs: "100%", sm: "50%" },
+                  position: "relative",
+                  maxWidth: "25rem",
+                  flex:1
+                  
                 }}
               >
-                  {"chat"}
+                  <DoughnutChart 
+                    value={[23,66]}
+                    labels={["single chats","Group chats"]}
+                    />
                   <Stack 
                     position={"absolute"}
                     direction={"row"}
